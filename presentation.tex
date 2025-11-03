@@ -46,16 +46,43 @@
 \end{enumerate}    
 \end{frame}
 
+\begin{frame}{Introduction}
+    \begin{columns}
+        \column{0.42\textwidth}\begin{itemize}
+            \item Goal is to get you started with bare basics of Vim
+            \item Then get you to practicing Vim ASAP
+            \item Ask questions if you have any, especially during practice section
+        \end{itemize}
+
+        \column{0.58\textwidth} \includegraphics[width=\linewidth]{qrcode.png}
+    \end{columns}
+\end{frame}
+
 \section{What is Vim}
 \begin{frame}{What is Vim?}
-\begin{outline}
-\1 Vim stands for Vi iMproved
-\2 Vi is an old text editor, so Vim is an improved version of this old text editor
-\1 It’s primary draw is the many keyboard shortcuts
-\1 It’s installed on pretty much every Linux machine
-\1 Extensibility through plugins
+    \begin{outline}
+        \1 Vim stands for Vi iMproved
+        \2 Vi is an old text editor, so Vim is an improved version of this old text editor
+        \1 It’s primary draw is the many keyboard shortcuts
+        \1 It’s installed on pretty much every Linux machine
+        \1 Extensibility through plugins
+    \end{outline}
+\end{frame}
 
-\end{outline}
+\begin{frame}{What is Vim?}
+    {\large What can you do with Vim?}
+    \begin{columns}
+            \column{0.42\textwidth}
+            \begin{outline}
+            \1 Edit any file that has text in it
+            \1 Navigate directories
+            \1 Extend Vim using plugins to give it features like autocomplete
+            \1 You may be able to edit some things you wouldn't even think would be possible!
+            \2 This entire presentation was written in Vim!
+        \end{outline}
+
+        \column{0.58\textwidth} \includegraphics[width=\linewidth]{CurrentlyEditing.png}
+    \end{columns}
 \end{frame}
 
 \subsection{Why use keybinds?}
@@ -109,8 +136,27 @@
 
 \section{Vim Basics}
 \begin{frame}{Vim Basics}
-TODO: Make intro page for vim basics
+Vim has many concepts that are useful to learn, but we will boil it down to three for this presentation.
+\begin{enumerate}
+    {\item Buffers}
+    {\item Modes}
+    {\item Keybinds}
+    \end{enumerate}
 \end{frame}
+
+\subsection{Buffers}
+
+\begin{frame}{Buffers}
+    \begin{outline}
+        \1 Buffers are like the clipboard on your computer
+\2 The buffer is separate from your clipboard
+\2 Things you copy in vim will not copy to your clipboard, and vice versa
+\1 You can have as many buffers as you want
+\2 For this example we will stick to only 26, the characters in the English alphabet.
+\1 Before inputting a command that uses buffers (you will see some in a second), you input double quote (") followed by the name of the buffer.
+    \end{outline}
+\end{frame}
+
 \subsection{Modes}
 
 \begin{frame}{Modes}
@@ -126,7 +172,6 @@ TODO: Make intro page for vim basics
 \begin{frame}{Modes}
     {\large What modes are there?}
     \begin{outline}
-    {
         \1 Normal Mode
         \2 {\scriptsize Vim “home base”, allows you to switch to different modes}
         \2 {\scriptsize Also used for things like rearranging text (copying and pasting)}
@@ -138,20 +183,123 @@ TODO: Make intro page for vim basics
         \2 {\scriptsize Allows you to enter commands to Vim, which is used for things like saving, among plenty of other things}
         \1Replace Mode
         \2 {\scriptsize Like Insert Mode, but will directly write over text rather than adding new text}
-        }
     \end{outline}
-    
 \end{frame}
 
-\subsection{Buffers}
-\begin{frame}{Buffers}
+\begin{frame}{Modes}
+    {\large Insert Mode}
     \begin{outline}
-        \1 Buffers are like the clipboard on your computer
-\2 The buffer is separate from your clipboard
-\2 Things you copy in vim will not copy to your clipboard, and vice versa
-\1 You can have as many buffers as you want
-\2 For this example we will stick to only 26, the characters in the English alphabet.
-\1 Before inputting a command that uses buffers (you will see some in a second), you input double quote (") followed by the name of the buffer.
+        \1 Most common way to enter insert mode is by pressing `i` or `a`
+        \2 `i` inserts before cursor, `a` inserts after cursor
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Modes}
+    {\large Visual Mode}
+    \begin{outline}
+        \1 Most common way to enter visual mode is by pressing `v`
+        \1 Allows you to move around your cursor with hjkl to select different portions of text
+        \2 Can be used to yank (copy) large portions of text to other areas
+        \1 Press escape to exit visual mode
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Modes}
+    {\large Command Mode}
+    \begin{outline}
+        \1 Entered by press `:`, you will see a the command in the bottom left
+        \1 Once you've typed a command, press enter
+        \2 Example, `:wq` to enter command mode, then "write" and "quit"
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Modes}
+    {\large Replace Mode}
+    \begin{outline}
+        \1 Entered by pressing `R`
+        \1 Allows you to type directly over existing text, replacing it
+    \end{outline}
+\end{frame}
+
+\subsection{Keybinds}
+
+\begin{frame}{Keybinds}
+    \begin{outline}
+        \1 Keybinds are used in Vim to tell the program what you want to do
+        \1 They use "context" from where your cursor is or what you have selected
+        \1 Some change modes, some move the cursor, and some edit text
+        \2 There are hundreds of keybinds! You don't have to learn them all to use Vim
+        \1 Some keybinds can be combined to do new things
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Keybinds}
+{\large HOW DO I EXIT HELP}
+    \begin{outline}
+        \1 In command mode, type `w` to signify you'd like to write, or save, the file.
+        \1 In command mode, type `q` to signify you'd like to exit, or close, the file.
+        \1 You can combine these commands into "wq" to signify you'd like to save and exit the file!
+        \2 If you have modified a file since you've opened it, `q` will not work, you must either write `wq` to save and quite, or `q!` to quit without saving
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Keybinds}
+    {\large Basic text manipulation commands}
+    \begin{outline}
+        \1 In normal mode, use `x` to delete one character
+        \1 In normal mode, use `r` to change the character under the cursor
+        \1 In normal mode, use `c` to change large groups of words using different contexts
+        \1 In normal mode, use `d` to delete large groups of words using different contexts
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Keybinds}
+    {\large Context, how we tell Vim what we want}
+    \begin{outline}
+        \1 Most basic context is a number, `10x` will delete 10 characters
+        \1 Other easy context is simply repeating the same command to indicate a whole line
+        \2 Using `dd` will delete the entire line under the cursor
+        \1 `f\{character\}` indicates find, and execute the command until the next occurance of the character you specify, inclusive
+        \2 You can use a number modifier on this! `2fi` will find the 2nd occurance of i from the cursor!
+        \1 `t\{character\}` indicates until, meaning it will execute the command until the next occurance of the character you specify, exclusive
+        \2 You can once again use the number modifier on this!
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Keybinds}
+    {\large Context Notes}
+    \begin{outline}
+        \1 There are a lot more things you can do with context, but outside scope of beginner.
+        \1 If you didn't understand this, that's okay! It will come with time and using Vim.
+        \1 Once you get a grasp on how this works you can edit large groups of text very quickly.
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Keybinds}
+    {\large Moving Text}
+    \begin{outline}
+        \1 By default, you can't just copy and paste
+        \1 Instead, commands like `d` for delete will store the line in the main buffer.
+        \2 Buffers mean the text is saved and can be pasted in later
+        \1 To store text into a buffer without deleting it, use `y` in normal mode with context. It stands for `yank`
+        \1 To paste text from a buffer, use `p` for paste
+        \2 For all copy, paste, and delete commands you can specify a buffer before the command to put the data into a different buffer.
+        \1 `"add` deletes an entire line from the file, and places it into buffer a (also places it in main buffer)
+    \end{outline}
+\end{frame}
+
+\begin{frame}{Keybinds}
+    What does this keybind do?
+\end{frame}
+
+\subsection{Interactive Tutorial}
+
+\begin{frame}{Interactive Tutorial}
+    \begin{outline}
+        \1 Now we will do an interactive tutorial for Vim using vimtutor
+        \1 vimtutor allows us to practice editing text using Vim
+        \1 Feel free to do this on your own by running `vimtutor` in a shell
+        \2 If this doesn't work, we will complete it as a group as well
     \end{outline}
 \end{frame}
 
